@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Course List</h1>
-    <ul>
+    <ul class="course-list">
         {% for course in courses %}
-        <li>{{ course.name }}</li>
+        <li class="course">{{ course.name }}</li>
         {% endfor %}
     </ul>
     <a href="{% url 'add_course' %}">Add New Course</a>
