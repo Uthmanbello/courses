@@ -1,8 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Welcome to <span style="color: #fff; font-size: 2rem; font-weight: 700; font-family: 'Josefin Sans', sans-serif;">DeRoy<span style="color: #ffc107; display: inline-block; animation: rotateLetter 2s infinite;">@</span>l&#233;</span> Course App</h1>
-    <a href="{% url 'course_list' %}">Get Started</a>
+    <div class="landing column just-center align-center">
+        <div class="column align-center">
+            <p style="color: #fff; font-size: 4rem; font-weight: 700; font-family: 'Josefin Sans', sans-serif;">DeRoy<span style="color: #ffc107; display: inline-block; animation: rotateLetter 2s infinite;">@</span>l&#233;</p>
+            <p class="light-grey landing-text">Course App</p>
+        </div>
+        <a href="{% url 'course_list' %}" class="get-started row just-center">Get Started</a>
+    </div>
     <style>
         @keyframes rotateLetter {
             from {
