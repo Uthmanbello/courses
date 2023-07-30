@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Welcome to Deroyale Course App</h1>
+    <h1>Welcome to <span style="color: #fff; font-size: 2rem; font-weight: 700; font-family: 'Josefin Sans', sans-serif;">DeRoy<span style="color: #ffc107; display: inline-block; animation: rotateLetter 2s infinite;">@</span>l&#233;</span> Course App</h1>
     <a href="{% url 'course_list' %}">Get Started</a>
+    <style>
+        @keyframes rotateLetter {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+    </style>
 {% endblock %}
