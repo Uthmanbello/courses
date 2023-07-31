@@ -10,12 +10,19 @@
 </div>
 
     <h2>Topics</h2>
-    <ol>
+    <ol class="topics">
         {% for topic in course.topics.all %}
-        <li>{{ topic.title }}<br>{{ topic.description }}</li>
+        <li class="row topic-item">
+            <p>{{ forloop.counter }}.</p>
+            <div class="topic-duration">
+                <p>{{ topic.title }}</p>
+                <p class="primary">{{ topic.description }}</p>
+            </div>
+        </li>
         {% endfor %}
     </ol>
 
+    <div class="empty"></div>
     <footer class="footer-icons row">
         <a href="{% url 'landing_page' %}"><i class="fa-solid fa-house"></i></a>
         <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
