@@ -4,13 +4,13 @@
     <div class="course-heading">
         <div>
             <h2>5 Courses</h2>
-            <p class="light-grey">20 Topics</p>
+            <p class="light-grey">{{ total_topics_count }} Topics</p>
         </div>
         <a href="{% url 'add_course' %}" class="primary add-course"><i class="fa-solid fa-plus fa-2x primary"></i></i></a>
     </div>
     <ul class="course-list">
         {% for course in courses %}
-        <a href="{% url 'course_detail' course.id %}" class="secondary"><li class="course">{{ course.name }} <span class="light-grey">5 topics</span></li></a>
+        <a href="{% url 'course_detail' course.id %}" class="secondary"><li class="course">{{ course.name }} <span class="light-grey">{{ course.topics_count }} topics</span></li></a>
         {% endfor %}
     </ul>
     <div class="empty"></div>
