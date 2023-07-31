@@ -1,5 +1,5 @@
 from django import forms
-from .models import Courselist
+from .models import Courselist, Topic
 
 class CourseForm(forms.ModelForm):
     class Meta:
@@ -9,3 +9,8 @@ class CourseForm(forms.ModelForm):
             'name': forms.TextInput(attrs={'class': 'text-field secondary'}),
             'icon': forms.Select(attrs={'class': 'select-field secondary'}),
         }
+
+class TopicForm(forms.ModelForm):
+    class Meta:
+        model = Topic
+        fields = ['title', 'description']

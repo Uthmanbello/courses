@@ -1,0 +1,10 @@
+<h1>{{ course.name }}</h1>
+
+<h2>Topics</h2>
+<ul>
+    {% for topic in course.topics.all %}
+    <li>{{ topic.title }}<br>{{ topic.description }}</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'add_topics' course.id %}">Add Topics</a>
