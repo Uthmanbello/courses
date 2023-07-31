@@ -14,3 +14,7 @@ class TopicForm(forms.ModelForm):
     class Meta:
         model = Topic
         fields = ['title', 'description']
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'text-field secondary'}),
+            'description': forms.TextInput(attrs={'class': 'text-field secondary'}),
+        }
