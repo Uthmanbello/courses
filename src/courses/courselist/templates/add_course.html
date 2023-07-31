@@ -1,11 +1,17 @@
 {% extends 'base.html' %}    
     
 {% block content %}
-    <h1>Add a New Course</h1>
+    <div class="course-heading">
+        <a href="{% url 'course_list' %}" class="primary"><i class="fa-solid fa-angle-left primary"></i></i></a>
+        <div>
+            <h2>Add a new course</h2>
+        </div>
+        <div></div>
+    </div>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Add Course">
+        <input type="submit" value="Add" class="get-started add row just-center">
     </form>
     <footer class="footer-icons row">
         <a href="{% url 'landing_page' %}"><i class="fa-solid fa-house"></i></a>
