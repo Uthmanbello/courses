@@ -22,9 +22,9 @@ def add_course(request):
     return render(request, 'add_course.html', {'form': form})
 
 def course_detail(request, courselist_id):
-    # course = get_object_or_404(Courselist, id=courselist_id)
     course = get_object_or_404(Courselist.objects.prefetch_related('topics'), id=courselist_id)
-    return render(request, 'course_detail.html', {'course': course})
+    topics_count = course.topics.count()
+    return render(request, 'course_detail.html', {'course': course, 'topics_count': topics_count})
 
 def add_topics(request, courselist_id):
     course = get_object_or_404(Courselist, id=courselist_id)

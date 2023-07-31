@@ -1,10 +1,27 @@
-<h1>{{ course.name }}</h1>
+{% extends 'base.html' %}
 
-<h2>Topics</h2>
-<ul>
-    {% for topic in course.topics.all %}
-    <li>{{ topic.title }}<br>{{ topic.description }}</li>
-    {% endfor %}
-</ul>
+{% block content %}
+<div class="course-heading">
+    <div>
+        <h2>{{ course.name }}</h2>
+        <p class="light-grey">{{ topics_count }} Topics</p>
+    </div>
+    <a href="{% url 'add_topics' course.id %}" class="primary add-course"><i class="fa-solid fa-plus fa-2x primary"></i></i></a>
+</div>
 
-<a href="{% url 'add_topics' course.id %}">Add Topics</a>
+    <h2>Topics</h2>
+    <ol>
+        {% for topic in course.topics.all %}
+        <li>{{ topic.title }}<br>{{ topic.description }}</li>
+        {% endfor %}
+    </ol>
+
+    <!-- <a href="{% url 'add_topics' course.id %}">Add Topics</a> -->
+
+    <footer class="footer-icons row">
+        <a href="{% url 'landing_page' %}"><i class="fa-solid fa-house"></i></a>
+        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="{% url 'course_list' %}"><i class="fa-solid fa-list"></i></a>
+        <a href=""><i class="fa-solid fa-user"></i></a>
+    </footer>
+{% endblock %}

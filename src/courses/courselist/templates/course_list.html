@@ -10,11 +10,11 @@
     </div>
     <ul class="course-list">
         {% for course in courses %}
-        <a href="{% url 'course_detail' course.id %}"><li class="course">{{ course.name }} <span class="light-grey">5 topics</span></li></a>
+        <a href="{% url 'course_detail' course.id %}" class="secondary"><li class="course">{{ course.name }} <span class="light-grey">5 topics</span></li></a>
         {% endfor %}
     </ul>
     <div class="empty"></div>
-    
+
     <footer class="footer-icons row">
         <a href="{% url 'landing_page' %}"><i class="fa-solid fa-house"></i></a>
         <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
