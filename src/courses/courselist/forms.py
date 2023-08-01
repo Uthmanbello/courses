@@ -13,8 +13,8 @@ class CourseForm(forms.ModelForm):
 class TopicForm(forms.ModelForm):
     class Meta:
         model = Topic
-        fields = ['title', 'description']
+        fields = ['title', 'duration']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'text-field secondary'}),
-            'description': forms.TextInput(attrs={'class': 'text-field secondary'}),
+            'duration': forms.NumberInput(attrs={'class': 'number-field secondary'}),
         }

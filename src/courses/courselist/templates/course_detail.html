@@ -1,22 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="course-heading">
-    <div>
-        <h2>{{ course.name }}</h2>
-        <p class="light-grey">{{ topics_count }} Topics</p>
+    <div class="course-heading">
+        <div>
+            <h2>{{ course.name }}</h2>
+            <p class="light-grey">{{ topics_count }} Topics</p>
+        </div>
+        <a href="{% url 'add_topics' course.id %}" class="primary add-course"><i class="fa-solid fa-plus fa-2x primary"></i></i></a>
     </div>
-    <a href="{% url 'add_topics' course.id %}" class="primary add-course"><i class="fa-solid fa-plus fa-2x primary"></i></i></a>
-</div>
 
-    <h2>Topics</h2>
     <ol class="topics">
         {% for topic in course.topics.all %}
         <li class="row topic-item">
             <p>{{ forloop.counter }}.</p>
             <div class="topic-duration">
                 <p>{{ topic.title }}</p>
-                <p class="primary">{{ topic.description }}</p>
+                <p class="primary">{{ topic.duration }} mins</p>
             </div>
         </li>
         {% endfor %}
