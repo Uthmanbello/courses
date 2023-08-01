@@ -24,6 +24,13 @@ def add_course(request):
 
     return render(request, 'add_course.html', {'form': form})
 
+def delete_course(request, courselist_id):
+    course = get_object_or_404(Courselist, id=courselist_id)
+    if request.method == 'POST':
+        course.delete()
+        return redirect('course_list')
+    return render(request, 'delete_course.html', {'course': course})
+
 def course_detail(request, courselist_id):
     course = get_object_or_404(Courselist.objects.prefetch_related('topics'), id=courselist_id)
     topics_count = course.topics.count()
