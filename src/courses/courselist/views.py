@@ -9,8 +9,9 @@ def landing_page(request):
 
 def course_list(request):
     courses = Courselist.objects.annotate(topics_count=Count('topics'))
+    courses_count = courses.count()
     total_topics_count = Courselist.objects.aggregate(total=Count('topics'))['total']
-    return render(request, 'course_list.html', {'courses': courses, 'total_topics_count': total_topics_count})
+    return render(request, 'course_list.html', {'courses': courses, 'total_topics_count': total_topics_count, 'courses_count': courses_count})
 
 def add_course(request):
     if request.method == 'POST':
