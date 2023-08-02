@@ -1,12 +1,14 @@
-<!-- delete_course.html -->
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>Delete {{ course.name }} Course</h2>
-    <p>Are you sure you want to delete the course?</p>
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">Confirm Delete</button>
-    </form>
-    <a href="{% url 'course_detail' course.id %}">Cancel</a>
+    <div class="column just-center align-center delete-confirm">
+        <p>Are you sure you want to delete <span class="primary">{{ course.name }}</span> course and all its topics?</p>
+        <div class="row yes-no">
+            <a href="{% url 'course_detail' course.id %}" class="no row align-center just-center">No</a>
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="yes">Yes</button>
+            </form>
+        </div>
+    </div>
 {% endblock %}
