@@ -16,5 +16,6 @@ class TopicForm(forms.ModelForm):
         fields = ['title', 'duration']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'text-field secondary'}),
+            'note': forms.Textarea(attrs={'class': 'text-area secondary'}),
             'duration': forms.NumberInput(attrs={'class': 'number-field secondary'}),
         }

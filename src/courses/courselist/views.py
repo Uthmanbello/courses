@@ -36,6 +36,11 @@ def course_detail(request, courselist_id):
     topics_count = course.topics.count()
     return render(request, 'course_detail.html', {'course': course, 'topics_count': topics_count})
 
+def topic_detail(request, courselist_id, topic_id):
+    course = get_object_or_404(Courselist.objects.prefetch_related('topics'), id=courselist_id)
+    topic = get_object_or_404(Topic, id=topic_id)
+    return render(request, 'topic_detail.html', {'course': course, 'topic': topic})
+
 def add_topics(request, courselist_id):
     course = get_object_or_404(Courselist, id=courselist_id)
 

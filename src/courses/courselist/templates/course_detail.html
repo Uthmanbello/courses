@@ -11,14 +11,16 @@
 
     <ol class="topics">
         {% for topic in course.topics.all %}
-        <li class="row topic-item">
-            <p>{{ forloop.counter }}.</p>
-            <div class="topic-duration">
-                <p>{{ topic.title }}</p>
-                <p class="primary">{{ topic.duration }} mins</p>
-            </div>
-            <a href="{% url 'delete_topic' courselist_id=course.id topic_id=topic.id %}"><i class="fa-regular fa-trash-can primary"></i></a>
-        </li>
+            <a href="{% url 'topic_detail' courselist_id=course.id topic_id=topic.id %}" class="secondary">
+                <li class="row topic-item">
+                    <p>{{ forloop.counter }}.</p>
+                    <div class="topic-duration">
+                        <p>{{ topic.title }}</p>
+                        <p class="primary">{{ topic.duration }} mins</p>
+                    </div>
+                    <i class="fa-solid fa-play light-grey"></i>
+                </li>
+            </a>
         {% endfor %}
         <a href="{% url 'delete_course' course.id %}">
         <li class="row topic-item delete-course">
