@@ -17,7 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from courselist.views import landing_page, course_list, add_course, course_detail, topic_detail, add_topics, delete_course, delete_topic
+from courselist.views import landing_page, course_list, add_course, course_detail, topic_detail, add_topics, delete_course, delete_topic, edit_topic
 
 urlpatterns = [
     path('', landing_page, name='landing_page'),
@@ -29,5 +29,7 @@ urlpatterns = [
     path('courses/<int:courselist_id>/add_topic/', add_topics, name='add_topics'),
     path('courses/<int:courselist_id>/delete/', delete_course, name='delete_course'),
     path('courses/<int:courselist_id>/<int:topic_id>/delete_topic/', delete_topic, name='delete_topic'),
+    # path('courses/<int:courselist_id>/edit_topic/<int:topic_id>/', edit_topic, name='edit_topic'),
+    path('courses/<int:courselist_id>/edit_topic/<int:topic_id>/', edit_topic, name='edit_topic'),
 ]
 

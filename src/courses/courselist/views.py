@@ -63,3 +63,17 @@ def delete_topic(request, courselist_id, topic_id):
         topic.delete()
         return redirect('course_detail', courselist_id=course.id)
     return render(request, 'delete_topic.html', {'course': course, 'topic': topic})
+
+def edit_topic(request, courselist_id, topic_id):
+    course = get_object_or_404(Courselist, id=courselist_id)
+    topic = get_object_or_404(Topic, id=topic_id)
+
+    if request.method == 'POST':
+        form = TopicForm(request.POST, instance=topic)
+        if form.is_valid():
+            form.save()
+            return redirect('course_detail', courselist_id=course.id)
+    else:
+        form = TopicForm(instance=topic)
+
+    return render(request, 'edit_topic.html', {'form': form})
