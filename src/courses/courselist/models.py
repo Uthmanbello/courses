@@ -12,6 +12,6 @@ class Courselist(models.Model):
 
 class Topic(models.Model):
     course = models.ForeignKey(Courselist, on_delete=models.CASCADE, related_name='topics')
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=30)
     note = models.TextField(default='N/A')
     duration = models.IntegerField(default=0)
