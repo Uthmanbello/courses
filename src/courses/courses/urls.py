@@ -17,10 +17,11 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from courselist.views import landing_page, course_list, add_course, course_detail, topic_detail, add_topics, delete_course, delete_topic, edit_topic
+from courselist.views import landing_page, about, course_list, add_course, course_detail, topic_detail, add_topics, delete_course, delete_topic, edit_topic
 
 urlpatterns = [
     path('', landing_page, name='landing_page'),
+    path('about/', about, name='about'),
     path('admin/', admin.site.urls),
     path('courses/', course_list, name='course_list'),
     path('add_course/', add_course, name='add_course'),

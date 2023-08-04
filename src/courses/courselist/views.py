@@ -7,6 +7,9 @@ from .forms import CourseForm, TopicForm
 def landing_page(request):
     return render(request, 'landing_page.html')
 
+def about(request):
+    return render(request, 'about.html')
+
 def course_list(request):
     courses = Courselist.objects.annotate(topics_count=Count('topics')).order_by('name')
     courses_count = courses.count()
