@@ -33,8 +33,9 @@ def delete_course(request, courselist_id):
 
 def course_detail(request, courselist_id):
     course = get_object_or_404(Courselist.objects.prefetch_related('topics'), id=courselist_id)
+    topics = course.topics.order_by('id')
     topics_count = course.topics.count()
-    return render(request, 'course_detail.html', {'course': course, 'topics_count': topics_count})
+    return render(request, 'course_detail.html', {'course': course, 'topics': topics, 'topics_count': topics_count})
 
 def topic_detail(request, courselist_id, topic_id):
     course = get_object_or_404(Courselist.objects.prefetch_related('topics'), id=courselist_id)

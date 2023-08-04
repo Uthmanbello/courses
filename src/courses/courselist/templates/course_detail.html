@@ -14,7 +14,7 @@
     </div>
 
     <ol class="topics">
-        {% for topic in course.topics.all %}
+        {% for topic in topics %}
             <a href="{% url 'topic_detail' courselist_id=course.id topic_id=topic.id %}" class="secondary">
                 <li class="row topic-item">
                     <p>{{ forloop.counter }}.</p>
