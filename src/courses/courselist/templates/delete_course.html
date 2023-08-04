@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="column just-center align-center delete-confirm">
+        <p style="text-align: center;">Are you sure you want to delete <span class="primary">{{ course.name }}</span> course and all its topics?</p>
+        <div class="row yes-no">
+            <a href="{% url 'course_detail' course.id %}" class="no row align-center just-center">No</a>
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="yes">Yes</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeRoyale Courses</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,500;0,700;1,100&family=Lato:wght@300;700;900&family=Lobster&family=Manrope:wght@200;400&family=Roboto&family=Rubik&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/dcdd89c74c.js" crossorigin="anonymous"></script>
+    <style>
+        /* * {
+            font-family: 'Manrope', sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #181818;
+            color: #f8f8f8;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .primary {
+            color: #ffb267;
+        }
+
+        .secondary {
+            color: #f8f8f8;
+        }
+
+        .grey {
+            color: #181818;
+        }
+
+        .light-grey {
+            color: #656469;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .just-center{
+            justify-content: center;
+        }
+
+        .align-center {
+            align-items: center;
+        }
+
+        .landing {
+            margin-top: 25vh;
+            justify-content: space-between;
+            height: 70vh;
+        }
+
+        .landing-text {
+            font-size: 2rem;
+            margin-top: -5vh;
+        }
+
+        .get-started {
+            padding: 20px;
+            background-color: #ffb267;
+            color: #181818;
+            border-radius: 12px;
+            text-decoration: none;
+            width: 80vw;
+        }
+
+        .course-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0vw 5vw;
+        }
+
+        .topic-title {
+            flex-basis: 70%;
+        }
+
+        .add-course {
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: #ffb267 2px solid;
+            height: 50px;
+            width: 50px;
+            text-decoration: none;
+        }
+
+        .add-course:hover {
+            border: #656469 2px solid;
+        }
+
+        .course-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 2vw;
+            list-style: none;
+            margin: 0;
+            padding: 3vw;
+        }
+
+        .course {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 42vw;
+            height: 45vw;
+            border-radius: 24px;
+            background-color: #202020;
+        }
+
+        .course:hover {
+            border: 1px solid #ffb267;
+        }
+
+        .empty {
+            height: 7vh;
+        }
+
+        .text-field {
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid #ffb267;
+            background-color: transparent;
+            width: 60%;
+            margin-left: 2vw;
+        }
+
+        .text-field:focus {
+            outline: none;
+        }
+
+        .select-field {
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid #ffb267;
+            background-color: transparent;
+            margin-left: 2vw;
+            width: 30%;
+        }
+
+        .select-field:focus {
+            outline: none;
+        }
+
+        .select-field option {
+            background-color: #181818;
+            color: #f8f8f8;
+            font-size: 0.8rem;
+            padding-left: 10px;
+        }
+
+        .number-field {
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid #ffb267;
+            background-color: transparent;
+            margin-left: 2vw;
+            width: 30%;
+        }
+
+        .number-field:focus {
+            outline: none;
+        }
+
+        .text-area-field {
+            display: flex;
+            border: 1px solid#ffb267;
+            background-color: #181818;
+            color: #f8f8f8;
+            width: 100%;
+        }
+
+        .text-area-field:focus {
+            outline: none;
+        }
+
+        .add {
+            width: 25vw;
+            padding: 10px;
+        }
+
+        .topics {
+            margin: 0;
+            padding: 0;
+        }
+
+        .topic-item {
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #656469;
+            padding: 0px 10px;
+            margin: 5px 0;
+        }
+
+        .topic-duration {
+            flex-basis: 70%;
+        }
+
+        .delete-course {
+            border: 1px solid #ffb267;
+            color: #ffb267;
+            font-size: 1.2rem;
+            justify-content: center;
+            margin: auto;
+            padding: auto;
+        }
+
+        .delete-course:hover {
+            color: #181818;
+            background-color: #ffb267;
+        }
+
+        .delete-confirm {
+            margin-top: 35vh;
+        }
+
+        .yes-no {
+            margin-top: 5vh;
+            gap: 10vw;
+        }
+
+        .yes {
+            border: 1px solid #ffb267;
+            color: #181818;
+            font-size: 1.2rem;
+            justify-content: center;
+            margin: auto;
+            padding: auto;
+            background-color: #ffb267;
+            width: 80px;
+            height: 35px;
+        }
+
+        .yes:hover {
+            border: 1px solid red;
+            color: white;
+            background-color: red;
+        }
+
+        .no {
+            border: 1px solid #ffb267;
+            color: #ffb267;
+            font-size: 1.2rem;
+            justify-content: center;
+            margin: auto;
+            padding: auto;
+            background-color: transparent;
+            width: 80px;
+            height: 35px;
+        }
+
+        .no:hover {
+            border: 1px solid #ffb267;
+            color: #181818;
+            background-color: #ffb267;
+        }
+
+        .note {
+            width: 85vw;
+            margin: auto;
+            padding: auto;
+        }
+
+        .footer-icons {
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            padding: 16px 8vw;
+            background-color: #181818;
+        }
+
+        .footer-icons a {
+            color: #f8f8f8;
+            text-decoration: none;
+        }
+
+        .footer-icons a:hover{
+            color: #ffb267;
+        } */
+    </style>
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="landing-back">
+        <div class="landing column just-center align-center">
+            <div class="column align-center">
+                <p style="color: #f8f8f8; font-size: 4rem; font-weight: 700; font-family: 'Josefin Sans', sans-serif;">DeRoy<span style="color: #ffb267; display: inline-block; animation: rotateLetter 2s infinite;" class="deroyale-at">@</span>l&#233;</p>
+                <p class="landing-text">Course App</p>
+            </div>
+            <a href="{% url 'course_list' %}" class="get-started row just-center">Get Started</a>
+        </div>
+    </div>
+    <style>
+        @keyframes rotateLetter {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+    </style>
+{% endblock %}

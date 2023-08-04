@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="course-list-back"></div>
+    <div class="course-list-overlay"></div>
+    <div class="course-heading">
+        <div>
+            <h2>{{ courses_count }} Courses</h2>
+            <p class="light-grey">{{ total_topics_count }} Topics</p>
+        </div>
+        <a href="{% url 'add_course' %}" class="primary add-course"><i class="fa-solid fa-plus fa-2x primary" style="font-size: 1.9rem;"></i></i></a>
+    </div>
+    <ul class="course-list">
+        {% for course in courses %}
+            <a href="{% url 'course_detail' course.id %}" class="secondary"><li class="course"><img src="{% static 'images/' %}{{ course.icon }}.svg" alt="course icon" class="icon-image">{{ course.name }} <span class="light-grey topics-count">{{ course.topics_count }} topics</span></li></a>
+        {% endfor %}
+    </ul>
+
+    <div class="empty"></div>
+    <footer class="footer-icons row">
+        <a href="{% url 'landing_page' %}"><i class="fa-solid fa-house"></i></a>
+        <a href="../"><i class="fa-solid fa-play" style="rotate: 180deg;"></i></a>
+        <a href="{% url 'course_list' %}"><i class="fa-solid fa-list"></i></a>
+        <a href="{% url 'about' %}"><i class="fa-solid fa-info"></i></a>
+    </footer>
+{% endblock %}

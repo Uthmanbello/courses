@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="course-list-back"></div>
+    <div class="course-list-overlay"></div>
+    <div class="column align-center">
+        <div class="course-heading">
+                <div class="column align-center">
+                    <p style="color: #f8f8f8; font-size: 2.5rem; font-weight: 700; font-family: 'Josefin Sans', sans-serif;">DeRoy<span style="color: #ffb267;" class="deroyale-at1">@</span>l&#233;</p>
+                </div>
+            <div></div>
+        </div>
+
+        <p class="about-text" style="text-align: center; font-size: 1.3rem;">At our company, we specialize in crafting cutting-edge web and mobile apps that blend innovation with usability. With a dedicated team of skilled designers and developers, we strive to create seamless and intuitive digital experiences, empowering businesses to thrive in the ever-evolving digital landscape.</p>
+        <p style="font-size: 1.3rem; font-weight: 700;">CONNECT WITH US</p>
+        <div class="row align-center connect-icons">
+            <a href="https://github.com/Uthmanbello" target="_blank"><i class="fa-brands fa-github fa-2x primary"></i></a>
+            <a href="https://www.linkedin.com/in/uthmanbelloimoukhuede" target="_blank"><i class="fa-brands fa-linkedin fa-2x primary"></i></a>
+            <a href="https://www.twitter.com/UthmanDeRoyale" target="_blank"><i class="fa-brands fa-twitter fa-2x primary"></i></a>
+            <a href="mailto:uthmanbelloimoukhuede@gmail.com"><i class="fa-brands fa-at fa-2x primary"></i></a>
+        </div>
+    </div>
+
+    <div class="empty"></div>
+    <footer class="footer-icons row">
+        <a href="{% url 'landing_page' %}"><i class="fa-solid fa-house"></i></a>
+        <a href="../"><i class="fa-solid fa-play" style="rotate: 180deg;"></i></a>
+        <a href="{% url 'course_list' %}"><i class="fa-solid fa-list"></i></a>
+        <a href="{% url 'about' %}"><i class="fa-solid fa-info"></i></a>
+    </footer>
+{% endblock %}

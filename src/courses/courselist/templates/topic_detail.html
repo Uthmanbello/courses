@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="course-heading">
+        <div class="topic-title">
+            <h2>{{ topic.title }}</h2>
+            <p class="light-grey">{{ topic.duration }} mins</p>
+        </div>
+        <div>
+            <a href="{% url 'edit_topic' courselist_id=course.id topic_id=topic.id %}" class="primary"><i class="fa-regular fa-pen-to-square fa-2x primary"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="{% url 'delete_topic' courselist_id=course.id topic_id=topic.id %}"><i class="fa-regular fa-trash-can fa-2x primary"></i></a>
+        </div>
+    </div>
+
+    <p class="note">{{ topic.note }}</p>
+
+    <div class="empty"></div>
+    <footer class="footer-icons row">
+        <a href="{% url 'landing_page' %}"><i class="fa-solid fa-house"></i></a>
+        <a href="{% url 'course_detail' courselist_id=course.id %}"><i class="fa-solid fa-play" style="rotate: 180deg;"></i></a>
+        <a href="{% url 'course_detail' courselist_id=course.id %}"><i class="fa-solid fa-list"></i></a>
+        <a href="{% url 'about' %}"><i class="fa-solid fa-info"></i></a>
+    </footer>
+{% endblock %}

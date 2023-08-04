@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="course-heading">
+        <a href="../.." class="primary"><i class="fa-solid fa-angle-left primary"></i></i></a>
+        <div>
+            <h2>Edit topic</h2>
+        </div>
+        <div></div>
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="get-started add row just-center">Update</button>
+    </form>
+
+    <div class="empty"></div>
+    <footer class="footer-icons row">
+        <a href="{% url 'landing_page' %}"><i class="fa-solid fa-house"></i></a>
+        <a href="../.."><i class="fa-solid fa-play" style="rotate: 180deg;"></i></a>
+        <a href="../.."><i class="fa-solid fa-list"></i></a>
+        <a href="{% url 'about' %}"><i class="fa-solid fa-info"></i></a>
+    </footer>
+{% endblock %}

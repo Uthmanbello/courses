@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="course-list-back"></div>
+    <div class="course-list-overlay detail-overlay"></div>
+    <div class="course-heading">
+        <div>
+            <h2>{{ course.name }}</h2>
+            <p class="light-grey">{{ topics_count }} Topics</p>
+        </div>
+        <img src="{% static 'images/' %}{{ course.icon }}.svg" alt="course icon" class="icon-image1">
+        <a href="{% url 'add_topics' course.id %}" class="primary add-course"><i class="fa-solid fa-plus fa-2x primary" style="font-size: 1.9rem;"></i></i></a>
+    </div>
+
+    <ol class="topics">
+        {% for topic in topics %}
+            <a href="{% url 'topic_detail' courselist_id=course.id topic_id=topic.id %}" class="secondary">
+                <li class="row topic-item">
+                    <p>{{ forloop.counter }}.</p>
+                    <div class="topic-duration">
+                        <p>{{ topic.title }}</p>
+                        <p class="primary">{{ topic.duration }} mins</p>
+                    </div>
+                    <i class="fa-solid fa-play light-grey"></i>
+                </li>
+            </a>
+        {% endfor %}
+        <a href="{% url 'delete_course' course.id %}">
+        <li class="row topic-item delete-course">
+            <p>Delete {{ course.name }} course &nbsp;&nbsp;<i class="fa-regular fa-trash-can fa-1.5x"></i></p>
+        </li>
+        </a>
+    </ol>
+
+    <div class="empty"></div>
+    <footer class="footer-icons row">
+        <a href="{% url 'landing_page' %}"><i class="fa-solid fa-house"></i></a>
+        <a href="../"><i class="fa-solid fa-play" style="rotate: 180deg;"></i></a>
+        <a href="{% url 'course_list' %}"><i class="fa-solid fa-list"></i></a>
+        <a href="{% url 'about' %}"><i class="fa-solid fa-info"></i></a>
+    </footer>
+{% endblock %}
