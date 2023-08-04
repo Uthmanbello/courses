@@ -280,6 +280,7 @@ form {
 
 .delete-confirm {
     margin-top: 35vh;
+    padding: 0 3vw;
 }
 
 .yes-no {
