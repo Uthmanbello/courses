@@ -222,7 +222,7 @@ form {
     border-bottom: 1px solid #ffb267;
     background-color: transparent;
     margin-left: 2vw;
-    width: 30%;
+    width: 15%;
 }
 
 .number-field:focus {
@@ -384,6 +384,22 @@ form {
 
     .icon-image1 {
         width: 8%;
+    }
+
+    .select-field {
+        width: 10vw;
+    }
+
+    .number-field {
+        width: 10vw;
+    }
+
+    .text-area-field {
+        height: 30vh;
+    }
+
+    .yes-no {
+        gap: 5vw;
     }
 
     .empty {
