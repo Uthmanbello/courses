@@ -331,6 +331,11 @@ form {
     padding: auto;
 }
 
+.connect-icons {
+    justify-content: space-evenly; 
+    width: 100%;
+}
+
 .footer-icons {
     justify-content: space-between;
     align-items: center;
@@ -360,11 +365,37 @@ form {
         font-size: 4rem;
     }
 
+    .deroyale-at1 {
+        font-size: 2.3rem;
+    }
+
+    .icon-image {
+        width: 50%;
+    }
+
+    .course {
+        width: 22vw;
+        height: 23vw;
+    }
+
     .fa-plus {
         font-size: 0.8rem;
     }
 
     .icon-image1 {
         width: 8%;
+    }
+
+    .empty {
+        height: 15vh;
+    }
+
+    .about-text {
+        width: 80vw;
+    }
+
+    .connect-icons {
+        justify-content: center;
+        gap: 2vw;
     }
 }
