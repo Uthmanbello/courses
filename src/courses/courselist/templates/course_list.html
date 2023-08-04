@@ -10,7 +10,7 @@
             <h2>{{ courses_count }} Courses</h2>
             <p class="light-grey">{{ total_topics_count }} Topics</p>
         </div>
-        <a href="{% url 'add_course' %}" class="primary add-course"><i class="fa-solid fa-plus fa-2x primary"></i></i></a>
+        <a href="{% url 'add_course' %}" class="primary add-course"><i class="fa-solid fa-plus fa-2x primary" style="font-size: 1.9rem;"></i></i></a>
     </div>
     <ul class="course-list">
         {% for course in courses %}

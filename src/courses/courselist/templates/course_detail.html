@@ -10,7 +10,7 @@
             <p class="light-grey">{{ topics_count }} Topics</p>
         </div>
         <img src="{% static 'images/' %}{{ course.icon }}.svg" alt="course icon" class="icon-image1">
-        <a href="{% url 'add_topics' course.id %}" class="primary add-course"><i class="fa-solid fa-plus fa-2x primary"></i></i></a>
+        <a href="{% url 'add_topics' course.id %}" class="primary add-course"><i class="fa-solid fa-plus fa-2x primary" style="font-size: 1.9rem;"></i></i></a>
     </div>
 
     <ol class="topics">

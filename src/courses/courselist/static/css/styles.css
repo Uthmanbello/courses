@@ -350,3 +350,21 @@ form {
 .footer-icons a:hover{
     color: #ffb267;
 }
+
+@media (min-width: 1024px) {
+    * {
+        font-size: 1.2rem;
+    }
+
+    .deroyale-at {
+        font-size: 4rem;
+    }
+
+    .fa-plus {
+        font-size: 0.8rem;
+    }
+
+    .icon-image1 {
+        width: 8%;
+    }
+}
