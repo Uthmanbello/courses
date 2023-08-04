@@ -12,7 +12,7 @@
         <img src="{% static 'images/' %}{{ course.icon }}.svg" alt="course icon" class="icon-image1">
         <a href="{% url 'add_topics' course.id %}" class="primary add-course"><i class="fa-solid fa-plus fa-2x primary"></i></i></a>
     </div>
-    
+
     <ol class="topics">
         {% for topic in course.topics.all %}
             <a href="{% url 'topic_detail' courselist_id=course.id topic_id=topic.id %}" class="secondary">
@@ -28,7 +28,7 @@
         {% endfor %}
         <a href="{% url 'delete_course' course.id %}">
         <li class="row topic-item delete-course">
-            <p>Delete {{ course.name }} course &nbsp;&nbsp;&nbsp;<i class="fa-regular fa-trash-can fa-1.5x"></i></p>
+            <p>Delete {{ course.name }} course &nbsp;&nbsp;<i class="fa-regular fa-trash-can fa-1.5x"></i></p>
         </li>
         </a>
     </ol>
