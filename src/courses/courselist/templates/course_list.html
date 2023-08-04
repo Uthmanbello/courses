@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
     <div class="course-heading">
         <div>
@@ -10,7 +12,7 @@
     </div>
     <ul class="course-list">
         {% for course in courses %}
-        <a href="{% url 'course_detail' course.id %}" class="secondary"><li class="course">{{ course.name }} <span class="light-grey">{{ course.topics_count }} topics</span></li></a>
+            <a href="{% url 'course_detail' course.id %}" class="secondary"><li class="course"><img src="{% static 'images/python.svg' %}" alt="course icon" class="icon-image">{{ course.name }} <span class="light-grey topics-count">{{ course.topics_count }} topics</span></li></a>
         {% endfor %}
     </ul>
 
